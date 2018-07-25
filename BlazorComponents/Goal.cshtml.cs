@@ -2,7 +2,7 @@
 
 namespace BlazorComponents
 {
-    public class GoalCardModel : BlazorComponent
+    public class GoalModel : BlazorComponent
     {
         [Parameter]
         public string Title { get; set; }
