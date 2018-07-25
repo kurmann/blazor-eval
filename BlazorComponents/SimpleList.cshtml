@@ -1,4 +1,5 @@
-﻿<div class="simple-list">
+﻿@inherits SimpleListModel
+<div class="simple-list">
 
     <div class="simple-list-header">
         <h1>Simple List</h1>
@@ -25,20 +26,3 @@
     </div>
 
 </div>
-
-
-@functions {
-
-private List<string> listItems = new List<string>();
-private string newItem;
-
-private void AddItem()
-{
-    if (string.IsNullOrEmpty(newItem))
-        return;
-
-    listItems.Add(newItem);
-    newItem = "";
-}
-
-}
