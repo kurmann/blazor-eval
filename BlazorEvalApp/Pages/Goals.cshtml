@@ -1,4 +1,17 @@
-﻿@page "/goals"
+﻿@using BlazorEvalService.Models
+@page "/goals"
+@inject HttpClient Http
 @inherits GoalsModel
 
-<Goal Title="Titel" Description="Beschreibung"></Goal>
+<h1>Ziele</h1>
+<button type="button" class="btn btn-primary" onclick="@LoadGoals">Lade Ziele</button>
+
+@if (Goals != null)
+{
+    <GoalList bind-Goals="Goals"></GoalList>
+}
+else
+{
+    <p>Ziele werden geladen...</p>
+    <p>Erstes Ziel</p>
+}
